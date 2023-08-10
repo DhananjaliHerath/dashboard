@@ -12,7 +12,7 @@ class _DonutChartState extends State<DonutChart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey[900],
+      backgroundColor: Colors.indigo.shade50,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -28,19 +28,19 @@ class _DonutChartState extends State<DonutChart> {
                     sections: [
                       PieChartSectionData(
                         value: 45,
-                        color: Colors.amber,
+                        color: Color.fromARGB(255, 26, 75, 209),
                         radius: 10,
                         showTitle: false,
                       ),
                       PieChartSectionData(
                         value: 35,
-                        color: const Color.fromARGB(255, 85, 7, 255),
+                        color: Color.fromARGB(255, 103, 26, 202),
                         radius: 10,
                         showTitle: false,
                       ),
                       PieChartSectionData(
                         value: 35,
-                        color: Color.fromARGB(255, 14, 224, 81),
+                        color: Color.fromARGB(255, 7, 28, 122),
                         radius: 30,
                         showTitle: false,
                       ),
@@ -49,10 +49,11 @@ class _DonutChartState extends State<DonutChart> {
                 ),
                 Center(
                   child: Text(
-                    "200000", // Replace with your desired text
+                    "\$200000", 
                     style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
+                      color: Colors.black,
+                       fontSize: 22,
+                          fontWeight: FontWeight.bold,
                    
                     ),
                   ),

@@ -1,6 +1,9 @@
 
 import 'package:_dashboard/pages/accountpage.dart';
+import 'package:_dashboard/pages/dashboard.dart';
 import 'package:_dashboard/pages/profile.dart';
+import 'package:_dashboard/pages/stackchart.dart';
+import 'package:_dashboard/pages/statistics.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -29,7 +32,7 @@ class _HomePageState extends State<HomePage> {
         child: Scaffold(
           backgroundColor: Colors.blueGrey[900],
           appBar: AppBar(
-            backgroundColor: Colors.blueGrey[900],
+            backgroundColor: Colors.black,
             bottom: TabBar(
               onTap: _onTabTapped,
               labelStyle: TextStyle(fontSize: 16),
@@ -61,26 +64,14 @@ class _HomePageState extends State<HomePage> {
           ),
           body: TabBarView(
             children: [
-              Container(
-                padding: EdgeInsets.all(16),
-                alignment: Alignment.center,
-                width: width,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      'Home',
-                    ),
-                    SizedBox(height: 15),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [],
-                    )
-                  ],
-                ),
+                Container(
+                     child: Column(
+        children: [
+          Expanded(
+            child: Dashboard(),
+          ),
+        ],
+      ),
               ),
               Container(
                      child: Column(
@@ -95,7 +86,7 @@ class _HomePageState extends State<HomePage> {
                      child: Column(
         children: [
           Expanded(
-            child: Profile(),
+            child: Statistics(),
           ),
         ],
       ),

@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/rendering.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -9,221 +13,176 @@ class Profile extends StatefulWidget {
 
 class _ProfileState extends State<Profile> {
   @override
-  Widget build(BuildContext context) {
-    var montserrat = TextStyle(
-      fontSize: 12,
-    );
-    return Material(
-      child: Container(
-        height: double.infinity,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: Colors.blue,
-        ),
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24),
-            child: Container(
-              constraints: BoxConstraints(maxWidth: 400),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
+ Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.indigo.shade50,
+      body: SafeArea(
+        child: Container(
+          margin: const EdgeInsets.only(top: 18, left: 24, right: 24),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SizedBox(
-                    height: 150,
-                    child: Stack(
-                      children: [
-                        ClipPath(
-                     
-                          child: Container(
-                            height: 100,
-                            decoration: BoxDecoration(
-                              color:Colors.black,
-                              borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(20),
-                                topLeft: Radius.circular(20),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Positioned(
-                          left: 11,
-                          top: 50,
-                          child: Row(
-                            children: [
-                              CircleAvatar(
-                                radius: 50,
-                                backgroundImage: NetworkImage(
-                                    "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/22/22a4f44d8c8f1451f0eaa765e80b698bab8dd826_full.jpg"),
-                              ),
-                              const SizedBox(width: 20),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "Max Weber",
-                                    style: TextStyle(
-                                      fontSize: 32,
-                                      color: const Color(0xFFFFFFFF),
-                                    ),
-                                  ),
-                                  const SizedBox(height: 8),
-                                  Text(
-                                    "Flutter Explained",
-                                    style: TextStyle(
-                                      fontSize: 20,
-                              color:Colors.black,
-                                     
-                                    ),
-                                  ),
-                                  const SizedBox(height: 8)
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ],
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Icon(
+                      Icons.arrow_back_ios,
+                      color: Colors.indigo,
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 16,
-                      vertical: 30,
+                  const RotatedBox(
+                    quarterTurns: 135,
+                    child: Icon(
+                      Icons.bar_chart_rounded,
+                      color: Colors.indigo,
+                      size: 28,
                     ),
-                    child: Row(
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Text(
-                              "Twitter Account: \n GitHub Account: ",
-                              style: montserrat,
-                            ),
-                            const SizedBox(height: 16),
-                            Text(
-                              "Official Start: \n Occupation: ",
-                              style: montserrat,
-                            ),
-                          ],
-                        ),
-                        const SizedBox(width: 8),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("@flutter_exp", style: montserrat),
-                            Text("md-weber", style: montserrat),
-                            const SizedBox(height: 16),
-                            Text("28.01.2020", style: montserrat),
-                            Text("Sn. Software Engineer", style: montserrat),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 40),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        left: 8.0, right: 8.0, bottom: 8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Column(
-                          children: [
-                            Text(
-                              "6280",
-                              style: buildMontserrat(
-                                const Color(0xFF000000),
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              "Subscribers",
-                            
-                              style: buildMontserrat(Colors.black),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          height: 50,
-                          child: const VerticalDivider(
-                            color: Color(0xFF9A9A9A),
-                          ),
-                        ),
-                        Column(
-                          children: [
-                            Text(
-                              "1745",
-                              style: buildMontserrat(
-                                const Color(0xFF000000),
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              "Followers",
-                              style: buildMontserrat(Colors.black,),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          height: 50,
-                          child: const VerticalDivider(
-                            color: Color(0xFF9A9A9A),
-                          ),
-                        ),
-                        Column(
-                          children: [
-                            Text(
-                              "163",
-                              style: buildMontserrat(
-                                const Color(0xFF000000),
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Text(
-                              "Videos",
-                              style: buildMontserrat(Colors.black,),
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 8)
+                  )
                 ],
               ),
-            ),
+              Expanded(
+                child: ListView(
+                  physics: const BouncingScrollPhysics(),
+                  children: [
+                    const SizedBox(height: 32),
+                    CircularPercentIndicator(
+                      radius: 220,
+                      lineWidth: 12,
+                      percent: 0.75,
+                      progressColor: Colors.indigo,
+                      center: const Text(
+                        '\$  23000000',
+                        style: TextStyle(
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 24),
+                    const Center(
+                      child: Text(
+                        'ACCOUNT',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.black54),
+                      ),
+                    ),
+                    const SizedBox(height: 32),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        _roundedButton(title: 'INCOME', isActive: true),
+                        _roundedButton(title: 'EXPANSES'),
+                      ],
+                    ),
+                    const SizedBox(height: 32),
+                    Container(
+                      padding: const EdgeInsets.symmetric(vertical: 18),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24),
+                            child: Text(
+                              'CURRENT',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 24),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: const [
+                                Text('\$  12000'),
+                       
+                                Text('\$  12000'),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 24),
+                    Container(
+                      padding: const EdgeInsets.symmetric(vertical: 18),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 24),
+                            child: Text(
+                              'HOME SAVING',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 24),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: const [
+                                Text('\$  12000'),
+                                 Text('\$  12000'),
+                             
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 24),
+                
+                    const SizedBox(height: 24),
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
       ),
     );
   }
 
-  TextStyle buildMontserrat(
-    Color color, {
-    FontWeight fontWeight = FontWeight.normal,
+ 
+  Widget _roundedButton({
+    required String title,
+    bool isActive = false,
   }) {
-    return TextStyle(
-      fontSize: 18,
-      color: color,
-      fontWeight: fontWeight,
+    return Container(
+      padding: const EdgeInsets.symmetric(
+        vertical: 12,
+        horizontal: 32,
+      ),
+      decoration: BoxDecoration(
+        color: isActive ? Colors.indigo : Colors.transparent,
+        borderRadius: BorderRadius.circular(24),
+        border: Border.all(color: Colors.indigo),
+      ),
+      child: Text(
+        title,
+        style: TextStyle(
+          color: isActive ? Colors.white : Colors.black,
+        ),
+      ),
     );
   }
 }
 
-// class AvatarClipper extends CustomClipper<Path> {
-//   @override
-//   Path getClip(Size size) {
-//     return Path()
-//       ..lineTo(0, size.height)
-//       ..lineTo(8, size.height)
-//       ..arcToPoint(Offset(114, size.height), radius: Radius.circular(1))
-//       ..lineTo(size.width, size.height)
-//       ..lineTo(size.width, 0)
-//       ..close();
-//   }
-// }
+
