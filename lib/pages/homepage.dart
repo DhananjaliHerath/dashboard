@@ -95,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                child: Column(
         children: [
           Expanded(
-            child: AccountPage(),
+            child: StackChart(),
           ),
         ],
       ),
