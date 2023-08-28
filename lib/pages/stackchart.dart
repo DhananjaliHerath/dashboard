@@ -25,7 +25,7 @@ class _StackChartState extends State<StackChart> {
           Container(
             height: size.height * .45,
             decoration: BoxDecoration(
-              color:Colors.indigo.shade50,
+            color:Colors.indigo.shade50,
             
             ),
           ),
@@ -52,7 +52,7 @@ class _StackChartState extends State<StackChart> {
                     SizedBox(
                       width: size.width * .6, 
                       child: Text(
-                        "DhananjaliDhananjaliDhananjaliDhananjaliDhananjaliDhananjaliDhananjali",
+                        "gdsdhwe uywe vqwewq uweuqwevweqnjksd kweuw qwetqwe kqweu ywqevbqwuv kwqeb",
                       ),
                     ),
                    SizedBox(height: 30),
@@ -60,7 +60,7 @@ class _StackChartState extends State<StackChart> {
                       spacing: 20,
                       runSpacing: 20,
                       children: <Widget>[
-                       Card(
+                        Card(
                          
                         ),
                         Card(
@@ -107,8 +107,8 @@ class _StackChartState extends State<StackChart> {
                               children: <Widget>[
                                 Text(
                                    style: TextStyle(
-                        color: Colors.white, 
-                      ),
+                                   color: Colors.white, 
+                                     ),
                                   "Baba",
                                   
                                 ),
@@ -140,7 +140,6 @@ class _StackChartState extends State<StackChart> {
   }
 }
 class Card extends StatelessWidget {
- 
 
   @override
   Widget build(BuildContext context) {
@@ -165,8 +164,7 @@ class Card extends StatelessWidget {
           child: Container(
             color: Colors.transparent,
             child: InkWell(
-             
-              child: Padding(
+             child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Row(
                   children: <Widget>[
@@ -174,8 +172,7 @@ class Card extends StatelessWidget {
                       height: 42,
                       width: 43,
                       decoration: BoxDecoration(
-                       
-                        shape: BoxShape.circle,
+                       shape: BoxShape.circle,
                         
                       ),
                      
