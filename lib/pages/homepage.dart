@@ -1,5 +1,6 @@
 
 import 'package:_dashboard/pages/accountpage.dart';
+import 'package:_dashboard/pages/clipper.dart';
 import 'package:_dashboard/pages/dashboard.dart';
 import 'package:_dashboard/pages/profile.dart';
 import 'package:_dashboard/pages/stackchart.dart';
@@ -95,7 +96,7 @@ class _HomePageState extends State<HomePage> {
                child: Column(
         children: [
           Expanded(
-            child: AccountPage(),
+            child:ClipperPage(),
           ),
         ],
       ),

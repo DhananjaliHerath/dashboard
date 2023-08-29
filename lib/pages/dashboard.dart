@@ -251,7 +251,7 @@ class _DashboardState extends State<Dashboard> {
                             width: MediaQuery.of(context).size.width * 0.4,
                             padding: const EdgeInsets.symmetric(
                                 vertical: 12, horizontal: 16),
-                            decoration: BoxDecoration(
+                                decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(12),
                               boxShadow: [
