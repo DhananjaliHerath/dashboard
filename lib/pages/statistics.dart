@@ -25,7 +25,7 @@ class _StatisticsState extends State<Statistics> {
             const SizedBox(height: 30),
             _chart(),
             const SizedBox(height: 30),
-            _statistic(),
+            // _statistic(),
           ],
         ),
       ),
